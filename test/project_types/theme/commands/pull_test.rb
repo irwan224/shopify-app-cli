@@ -17,6 +17,7 @@ module Theme
           context = ShopifyCli::Context.new
           ShopifyCli::Project.expects(:has_current?).returns(false).twice
 
+          Themekit.expects(:ensure_themekit_installed).with(context)
           Theme::Forms::Pull.expects(:ask)
             .with(context, [], {})
             .returns(Theme::Forms::Pull.new(context, [], { store: 'shop.myshopify.com',
