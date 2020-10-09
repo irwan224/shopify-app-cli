@@ -53,6 +53,25 @@ module Theme
             APP
           },
         },
+        generate: {
+          env: {
+            ask_password: "Password (defaults to {{green:%s}})",
+            ask_store: "Store (defaults to {{green:%s}})",
+            ask_theme: "Select theme",
+            help: <<~HELP,
+              Generate a new env in {{green:config.yml}}.
+                Usage: {{command:%s generate env}}
+                Options:
+                  {{command:--store=MYSHOPIFYDOMAIN}} Store URL. Must be an existing store with private apps enabled.
+                  {{command:--password=PASSWORD}} Private app password. App must have Read and Write Theme access.
+                  {{command:--themeid=THEMEID}} Theme ID. Must be an existing theme on your store.
+            HELP
+          },
+          help: <<~HELP,
+            Generate code in your Theme. Currently supports generating new envs.
+              Usage: {{command:%s generate [ env ]}}
+          HELP
+        },
         pull: {
           duplicate: "Duplicate directory, theme files weren't pulled",
           help: <<~HELP,
@@ -108,6 +127,12 @@ module Theme
             },
             successful: "Theme Kit installed successfully",
             verifying: "Verifying download...",
+          },
+        },
+        themekit: {
+          query_themes: {
+            bad_password: "Bad password",
+            not_connect: "Couldn't connect to given shop",
           },
         },
       },
