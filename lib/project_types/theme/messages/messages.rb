@@ -55,8 +55,10 @@ module Theme
         },
         generate: {
           env: {
-            ask_password: "Password (defaults to {{green:%s}})",
-            ask_store: "Store (defaults to {{green:%s}})",
+            ask_password_default: "Password (defaults to {{green:%s}})",
+            ask_password: "Password",
+            ask_store_default: "Store (defaults to {{green:%s}})",
+            ask_store: "Store",
             ask_theme: "Select theme",
             help: <<~HELP,
               Generate a new env in {{green:config.yml}}.
